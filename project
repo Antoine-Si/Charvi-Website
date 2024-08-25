@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindConnect - Mental Health Resources</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>MindConnect</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#mood-tracker">Mood Tracker</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#videos">Videos</a></li>
+                    <li><a href="#self-assessment">Self-Assessment</a></li>
+                    <li><a href="#helplines">Helplines</a></li>
+                    <li><a href="#professionals">Professionals</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="home" class="intro-section">
+                <h2>Welcome to MindConnect</h2>
+                <p>Your mental health matters. Use our tools and resources to track your mood, access valuable information, and connect with professionals.</p>
+                <img src="images/mental_health.jpg" alt="Mental Health Awareness" class="intro-image">
+            </section>
+
+            <section id="mood-tracker" class="info-section">
+                <h2>Mood Tracker</h2>
+                <p>Check-in daily to monitor your emotional well-being.</p>
+                <label for="mood">How are you feeling today?</label>
+                <select id="mood">
+                    <option value="happy">Happy</option>
+                    <option value="sad">Sad</option>
+                    <option value="stressed">Stressed</option>
+                    <option value="anxious">Anxious</option>
+                    <option value="neutral">Neutral</option>
+                </select>
+                <button onclick="trackMood()">Submit</button>
+                <p id="mood-result"></p>
+            </section>
+
+            <section id="resources" class="info-section">
+                <h2>Resources</h2>
+                <div class="resource-item">
+                    <h3>Understanding Mental Health</h3>
+                    <p>Get an overview of mental health and why it's important.</p>
+                    <a href="https://www.mentalhealth.gov/basics/what-is-mental-health" class="button">Read More</a>
+                </div>
+                <div class="resource-item">
+                    <h3>Common Mental Health Disorders</h3>
+                    <p>Learn about anxiety, depression, bipolar disorder, and more.</p>
+                    <a href="https://www.nami.org/About-Mental-Illness/Common-with-Mental-Illness" class="button">Read More</a>
+                </div>
+                <div class="resource-item">
+                    <h3>Online Therapy Services</h3>
+                    <p>Access therapy from the comfort of your home.</p>
+                    <a href="https://www.betterhelp.com/" class="button">Learn More</a>
+                </div>
+            </section>
+
+            <section id="videos" class="info-section">
+                <h2>Videos & Webinars</h2>
+                <div class="resource-item">
+                    <h3>Introduction to Cognitive Behavioral Therapy (CBT)</h3>
+                    <p>Understand how CBT can help.</p>
+                    <a href="https://www.youtube.com/watch?v=9c_Bv_FBE-c" class="button">Watch Video</a>
+                </div>
+                <div class="resource-item">
+                    <h3>Understanding and Managing Depression</h3>
+                    <p>Experts discuss managing depression.</p>
+                    <a href="https://www.youtube.com/watch?v=XiCrniLQGYc" class="button">Watch Video</a>
+                </div>
+            </section>
+
+            <section id="self-assessment" class="info-section">
+                <h2>Self-Assessment Tools</h2>
+                <div class="resource-item">
+                    <h3>Depression Screening Questionnaire</h3>
+                    <p>Assess your mental health status.</p>
+                    <a href="https://www.psycom.net/depression-test" class="button">Start Assessment</a>
+                </div>
+                <div class="resource-item">
+                    <h3>Anxiety Screening Questionnaire</h3>
+                    <p>Screen for symptoms of anxiety disorders.</p>
+                    <a href="https://www.psycom.net/anxiety-test" class="button">Start Assessment</a>
+                </div>
+            </section>
+
+            <section id="helplines" class="info-section">
+                <h2>Helplines & Crisis Support</h2>
+                <div class="resource-item">
+                    <h3>National Suicide Prevention Lifeline</h3>
+                    <p>1-800-273-TALK (8255) - Available 24/7 for anyone in distress.</p>
+                </div>
+                <div class="resource-item">
+                    <h3>Crisis Text Line</h3>
+                    <p>Text "HELLO" to 741741 - Free, 24/7 support via text.</p>
+                </div>
+            </section>
+
+            <section id="professionals" class="info-section">
+                <h2>Professional Services Directory</h2>
+                <div class="resource-item">
+                    <h3>Search for Therapists and Counselors</h3>
+                    <p>Find licensed mental health professionals.</p>
+                    <a href="https://www.psychologytoday.com/us/therapists" class="button">Find Professionals</a>
+                </div>
+                <div class="resource-item">
+                    <h3>Online Therapy Services</h3>
+                    <p>Access therapy from the comfort of your home.</p>
+                    <a href="https://www.betterhelp.com/" class="button">Learn More</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 MindConnect. All rights reserved.</p>
+            <p>Privacy Policy | Terms of Service | Contact Us</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+// scripts.js
+
+// Function to handle mood tracking
+function trackMood() {
+    var moodSelect = document.getElementById("mood");
+    var mood = moodSelect.options[moodSelect.selectedIndex].value;
+    var moodResult = document.getElementById("mood-result");
+
+    // Displaying the selected mood
+    switch(mood) {
+        case 'happy':
+            moodResult.textContent = "It's great to hear that you're feeling happy!";
+            break;
+        case 'sad':
+            moodResult.textContent = "It's okay to feel sad sometimes. Take care of yourself!";
+            break;
+        case 'stressed':
+            moodResult.textContent = "Feeling stressed? Remember to take a break and relax.";
+            break;
+        case 'anxious':
+            moodResult.textContent = "Anxiety can be tough. Try some breathing exercises.";
+            break;
+        case 'neutral':
+            moodResult.textContent = "Feeling neutral? Sometimes it's good to just have a calm day.";
+            break;
+        default:
+            moodResult.textContent = "Please select a mood.";
+    }
+
+    // Optionally, you can add more functionality here, like storing the mood data
+    // in a backend or local storage, and displaying mood trends over time.
+}
+
+// Function to initialize event listeners (if needed)
+function initialize() {
+    var moodButton = document.querySelector("button");
+    moodButton.addEventListener("click", trackMood);
+}
+
+// Initialize the app
+window.onload = initialize;
+
+* styles.css */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Styling */
+main {
+    padding: 20px;
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+.resource-item {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.resource-item  {
+    margin-top: 0;
+}
+
+.resource-item a.button {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.resource-item a.button:hover {
+    background: #555;
+}
+
+/* Footer Styling */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
